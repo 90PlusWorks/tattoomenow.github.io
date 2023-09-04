@@ -78,7 +78,7 @@ p {
   }
 }
 		</style>
-		<script type="text/javascript" src="jsm/tattoo/three.min.js"></script>
+		<script type="text/javascript" src="tattoomenow.github.io/jsm/tattoo/three.min.js"></script>
 
 		<script type="text/javascript">	
 			var controls;
@@ -99,8 +99,8 @@ p {
 			var mouse = new THREE.Vector2();
 
 			var textureLoader = new THREE.TextureLoader(); //THREE.ImageUtils.loadTexture
-			var decalDiffuse = textureLoader.load( '/textures/decal/decal-diffuse.png' );
-			var decalNormal = textureLoader.load( '/textures/decal/decal-normal.jpg' );
+			var decalDiffuse = textureLoader.load( '/tattoomenow.github.io/textures/decal/decal-diffuse.png' );
+			var decalNormal = textureLoader.load( '/tattoomenow.github.io/textures/decal/decal-normal.jpg' );
 			
 			
 			var mouseHelper;
@@ -115,19 +115,19 @@ p {
 				Choose: 0,
 				ClearOne: function () {removeDecals2();}
 			};
-			var designs = ['/assets/1ss.png','/assets/2ss.png','/assets/3ss.png','/assets/4ss.png','/assets/5ss.png','/assets/6ss.png','/assets/7ss.png','/assets/8ss.png','/assets/9ss.png','/assets/10ss.png',
-			'/assets/11ss.png','/assets/12ss.png','/assets/13ss.png','/assets/14ss.png','/assets/15ss.png','/assets/16ss.png','/assets/17ss.png','/assets/18ss.png','/assets/19ss.png','/assets/20ss.png',
-			'/assets/21ss.png','/assets/22ss.png','/assets/23ss.png','/assets/24ss.png','/assets/25ss.png','/assets/26ss.png','/assets/27ss.png','/assets/28ss.png','/assets/29ss.png','/assets/30ss.png',
-	      '/assets/31ss.png','/assets/32ss.png','/assets/33ss.png','/assets/34ss.png','/assets/35ss.png','/assets/36ss.png','/assets/37ss.png','/assets/38ss.png','/assets/39ss.png','/assets/40ss.png',
-	      '/assets/41ss.png','/assets/42ss.png','/assets/43ss.png','/assets/44ss.png','/assets/45ss.png','/assets/46ss.png','/assets/47ss.png','/assets/48ss.png','/assets/49ss.png','/assets/50ss.png'];
-			var skins = ['/models/gltf/LeePerrySmith/Map-COL5.jpg','/models/gltf/LeePerrySmith/Map-COL6.jpg', '/models/gltf/LeePerrySmith/Map-COL7.jpg', '/models/gltf/LeePerrySmith/Map-COL8.jpg'];
+			var designs = ['/tattoomenow.github.io/assets/1ss.png','/tattoomenow.github.io/assets/2ss.png','/tattoomenow.github.io/assets/3ss.png','/tattoomenow.github.io/assets/4ss.png','/tattoomenow.github.io/assets/5ss.png','/tattoomenow.github.io/assets/6ss.png','/tattoomenow.github.io/assets/7ss.png','/tattoomenow.github.io/assets/8ss.png','/tattoomenow.github.io/assets/9ss.png','/tattoomenow.github.io/assets/10ss.png',
+			'/tattoomenow.github.io/assets/11ss.png','/tattoomenow.github.io/assets/12ss.png','/tattoomenow.github.io/assets/13ss.png','/tattoomenow.github.io/assets/14ss.png','/tattoomenow.github.io/assets/15ss.png','/tattoomenow.github.io/assets/16ss.png','/tattoomenow.github.io/assets/17ss.png','/tattoomenow.github.io/assets/18ss.png','/tattoomenow.github.io/assets/19ss.png','/tattoomenow.github.io/assets/20ss.png',
+			'/tattoomenow.github.io/assets/21ss.png','/tattoomenow.github.io/assets/22ss.png','/tattoomenow.github.io/assets/23ss.png','/tattoomenow.github.io/assets/24ss.png','/tattoomenow.github.io/assets/25ss.png','/tattoomenow.github.io/assets/26ss.png','/tattoomenow.github.io/assets/27ss.png','/tattoomenow.github.io/assets/28ss.png','/tattoomenow.github.io/assets/29ss.png','/tattoomenow.github.io/assets/30ss.png',
+	      '/tattoomenow.github.io/assets/31ss.png','/tattoomenow.github.io/assets/32ss.png','/tattoomenow.github.io/assets/33ss.png','/tattoomenow.github.io/assets/34ss.png','/tattoomenow.github.io/assets/35ss.png','/tattoomenow.github.io/assets/36ss.png','/tattoomenow.github.io/assets/37ss.png','/tattoomenow.github.io/assets/38ss.png','/tattoomenow.github.io/assets/39ss.png','/tattoomenow.github.io/assets/40ss.png',
+	      '/tattoomenow.github.io/assets/41ss.png','/tattoomenow.github.io/assets/42ss.png','/tattoomenow.github.io/assets/43ss.png','/tattoomenow.github.io/assets/44ss.png','/tattoomenow.github.io/assets/45ss.png','/tattoomenow.github.io/assets/46ss.png','/tattoomenow.github.io/assets/47ss.png','/tattoomenow.github.io/assets/48ss.png','/tattoomenow.github.io/assets/49ss.png','/tattoomenow.github.io/assets/50ss.png'];
+			var skins = ['/tattoomenow.github.io/models/gltf/LeePerrySmith/Map-COL5.jpg','/tattoomenow.github.io/models/gltf/LeePerrySmith/Map-COL6.jpg', '/tattoomenow.github.io/models/gltf/LeePerrySmith/Map-COL7.jpg', '/tattoomenow.github.io/models/gltf/LeePerrySmith/Map-COL8.jpg'];
 	      scene = new THREE.Scene();
 			
 			var decalMaterial = new THREE.MeshPhongMaterial( { 
 				specular: 0x111111,
 				shininess: 0,
 				map: textureLoader.load( designs[addFile] ), 
-				normalMap: textureLoader.load( '/assets/wrinkle-normal.jpg' ),
+				normalMap: textureLoader.load( '/tattoomenow.github.io/assets/wrinkle-normal.jpg' ),
 				normalScale: new THREE.Vector2( .15, .15 ),
 				transparent: true, 
 				depthTest: true, 
@@ -418,13 +418,13 @@ var intersects = raycaster.intersectObjects( [ mesh ] );
 <!-- </div> -->
 		</div><script type="module">
 
-			import * as THREE from '/build/three.module.js';
+			import * as THREE from '/tattoomenow.github.io/build/three.module.js';
 
-			import { GUI } from '/jsm/libs/dat.gui.module.js';
+			import { GUI } from '/tattoomenow.github.io/jsm/libs/dat.gui.module.js';
 
-			import { OrbitControls } from '/jsm/controls/OrbitControls.js';
-			import { GLTFLoader } from '/jsm/loaders/GLTFLoader.js';
-			import { DecalGeometry } from '/jsm/geometries/DecalGeometry.js';
+			import { OrbitControls } from '/tattoomenow.github.io/jsm/controls/OrbitControls.js';
+			import { GLTFLoader } from '/tattoomenow.github.io/jsm/loaders/GLTFLoader.js';
+			import { DecalGeometry } from '/tattoomenow.github.io/jsm/geometries/DecalGeometry.js';
 
 			var container = document.getElementById( 'container' );
 
